@@ -1,0 +1,24 @@
+<bizzns = 'http://bizzns.com/bizzns/1.0'>
+<nt = 'http://www.jcp.org/jcr/nt/1.0'>
+<sling = 'http://sling.apache.org/jcr/sling/1.0'>
+
+[bizzns:article] > bizzns:base orderable
+	
+	/*
+	 * Article Title
+	 */
+	- Title (STRING) = 'Please enter article title here' autocreated mandatory COPY
+	- Abstract (STRING) = 'Article Abstract' COPY
+	- MainText (STRING) COPY
+	- Name (STRING) COPY
+	- PromotionText (STRING) COPY
+	
+	/*
+	 * Weak references to bizzns:Person instances. Could be multiple
+	 */
+	- Author (WEAKREFERENCE) multiple COPY
+	- CreateDate (DATE) COPY
+
+[bizzns:articleList] > bizzns:base orderable
+	+ bizzns:article COPY sns multiple version
+

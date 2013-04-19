@@ -1,0 +1,33 @@
+<bizzns = 'http://bizzns.com/bizzns/1.0'>
+<nt = 'http://www.jcp.org/jcr/nt/1.0'>
+<sling = 'http://sling.apache.org/jcr/sling/1.0'>
+
+[bizzns:app] > bizzns:base 
+	- Name (STRING) COPY
+	- Title (STRING) COPY
+	- Version (LONG) COPY
+	- 'Release Date' (DATE) COPY
+	- Owner (STRING) COPY
+	- isLive (STRING) COPY
+
+[bizzns:webapp] > bizzns:app 
+	- devURL (STRING) COPY
+	- qaURL (STRING) COPY
+	- liveURL (STRING) COPY
+
+[bizzns:android] > bizzns:app 
+	- baseAndroidVersion (STRING) COPY
+	- androidDeveloper (STRING) COPY
+
+[bizzns:link] orderable mixin primaryitem linkName
+	- linkHREF (STRING) = 'href where the link should goto' COPY
+	- linkType (STRING) = 'Type of the link  like menu, leftnav etc - enter a string.. templates could use this' mandatory COPY
+	- linkTinyURLS (STRING) = 'Enter the fylly qualified tiny urls here' protected multiple COPY nofulltext noqueryorder
+	- linkTrackingTags (STRING) = 'comma separated tracking tags' COPY
+	
+	/*
+	 * Link Name - Used to identify the link
+	 */
+	- linkName (STRING) = 'Link Name - Used to identify the link- Enter any string' COPY
+	- linkText (STRING) = 'link text which is diplayed for the link' COPY
+
