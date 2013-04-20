@@ -105,7 +105,7 @@ function checkAuth() {
                 //Every information is stored in the "data" variable
                 //sling:resourceType tells the repository that this entry is a bizzns/cms type
                 //jcr:mixinTypes=mix:referenceable defines this entry as referenceable (see JCR)
-                var data="title="+title+"&text="+text+"&sling:resourceType=bizzns/cms&jcr:mixinTypes=mix:referenceable";
+                var data="title="+title+"&text="+text+"&sling:resourceType=bizzns/cms/main&jcr:mixinTypes=mix:referenceable";
 
                 for (var j = 0 ; j < token.length ; j++){
                     data=data.concat("&tag="+token[j]);
@@ -152,10 +152,10 @@ function checkAuth() {
 		$.ajax({
                     type: "POST",
                     url: $("#entrytitle").val(),
-                    data: "title="+title+"&text="+text+"&sling:resourceType=bizzns/cms&jcr:mixinTypes=mix:referenceable",
+                    data: "title="+title+"&text="+text+"&sling:resourceType=bizzns/cms/main&jcr:mixinTypes=mix:referenceable",
                     success: function(msg){
                         alert("Entry saved");
-                        window.location = "/content/bizzns/cms/.html";
+                        window.location = "/content/bizzns/cms.html";
                     },
                     error: function(msg){
                         alert("Error during update");

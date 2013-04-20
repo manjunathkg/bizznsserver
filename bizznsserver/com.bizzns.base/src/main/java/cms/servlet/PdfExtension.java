@@ -147,7 +147,7 @@ public class PdfExtension extends SlingAllMethodsServlet {
         Paragraph intro=new Paragraph("List of articles in Bizzns CMS\n\n");
         document.add(intro);
         QueryManager queryManager = rootNode.getSession().getWorkspace().getQueryManager();  
-        Query query = queryManager.createQuery("/jcr:root/content/bizzns/cms/*/*/*/element(*, nt:unstructured) order by @created descending", "xpath");
+        Query query = queryManager.createQuery("/jcr:root/content/bizzns/cms/*/*/*/element(*, sling.Folder) order by @created descending", "xpath");
         NodeIterator iterator=query.execute().getNodes();
         Node tempNode=null;
         String title=null;

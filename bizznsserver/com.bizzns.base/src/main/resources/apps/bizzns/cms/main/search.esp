@@ -20,9 +20,9 @@ load("header.esp");
                                 if((request.getParameter('qtitle'))||(request.getParameter('qtext'))) {
                                     var queryManager = currentNode.getSession().getWorkspace().getQueryManager();
                                     if (request.getParameter('qtitle'))
-                                        var query = queryManager.createQuery("/jcr:root/content/bizzns/cms/*/*/*/element(*, nt:unstructured)[jcr:like(@title, '%"+request.getParameter("qtitle")+"%')] order by @created descending", "xpath");
+                                        var query = queryManager.createQuery("/jcr:root/content/bizzns/cms/*/*/*/element(*, sling:Folder)[jcr:like(@title, '%"+request.getParameter("qtitle")+"%')] order by @created descending", "xpath");
                                     else if (request.getParameter('qtext'))
-                                        var query = queryManager.createQuery("/jcr:root/content/bizzns/cms/*/*/*/element(*, nt:unstructured)[jcr:like(@text, '%"+request.getParameter("qtext")+"%')] order by @created descending", "xpath");
+                                        var query = queryManager.createQuery("/jcr:root/content/bizzns/cms/*/*/*/element(*, sling:Folder)[jcr:like(@text, '%"+request.getParameter("qtext")+"%')] order by @created descending", "xpath");
                                     
                                     var result = query.execute().getNodes();
                                     while(result.hasNext()) {
@@ -33,7 +33,7 @@ load("header.esp");
                                 }
                                 else if (request.getParameter('qtag')) {
                                     var queryManager = currentNode.getSession().getWorkspace().getQueryManager();
-                                    var searchString =  "/jcr:root/content/tags//element(*,nt:unstructured)[fn:name()= '"+request.getParameter("qtag")+"'] order by @created descending";
+                                    var searchString =  "/jcr:root/content/tags//element(*,sling:Folder)[fn:name()= '"+request.getParameter("qtag")+"'] order by @created descending";
                                     var query = queryManager.createQuery(searchString, "xpath");
                                     var result = query.execute().getNodes();
                                     var session = currentNode.getSession();

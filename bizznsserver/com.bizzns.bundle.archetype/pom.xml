@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+  <!--  parent pom -->
+  <parent>
+    <groupId>com.bizzns</groupId>
+    <artifactId>com.bizzns.parent</artifactId>
+      <version>2-SNAPSHOT</version>
+	  <relativePath>../com.bizzns.parent</relativePath>
+  </parent>
+ 
+   <!--  Source repository for this bundle -->
+   <scm>
+      <connection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.base.git</connection>
+      <developerConnection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.base.git</developerConnection>
+      <url>https://github.com/manjunathkg/bizznsserver/com.bizzns.base</url>
+   </scm> 
+  
+  
+  
+   <!--  values for current bundle -->
+     <groupId>com.bizzns</groupId>
+	<artifactId>com.bizzns.bundle.archetype</artifactId>
+	<packaging>bundle</packaging>
+	<description>Base system files - js, css and images used by all bizzns systems and base nodes</description>
+	<name>bizzns :: base:: libraries :: js,css, images etc + base nodes and types</name>
+	<version>1.0.1-SNAPSHOT</version> 
+ 
+	<build>
+		<plugins> 
+		    <!--  Convert service annotations to service definitions needed by felix -->
+		    <plugin>
+        		<groupId>org.apache.felix</groupId>
+        		<artifactId>maven-scr-plugin</artifactId> 
+      		</plugin>
+		    
+		    <!--  bundle the project using a profile - we can have development profile, qa profile etx.. only development is there for now -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId> 				 
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>development</id> <!--  parent pomdefines variables expected.. we define the values for this particular profile -->
+			<properties>
+				<!-- Iniial bundle configurations (for example FsResource) -->
+				<Felix-Initial-Configuration>
+					configuration
+				</Felix-Initial-Configuration>
+				
+				<Bundle-Category>						     
+                              bizzns-cms
+                </Bundle-Category>
+				
+				<!-- initial content to be loaded on bundle installation -->
+				<Sling-Initial-Content>
+					initial-content;overwrite:=true;uninstall:=true
+				</Sling-Initial-Content>
+				
+				<!-- Copy the files from filesystem to Bundle -->
+				<Include-Resource>
+					{maven-resources} 
+				</Include-Resource>
+
+				<!-- node types to be created -->
+				<Sling-Nodetypes>
+					nodetypes/bizzns.cnd;reregister:=true,
+					nodetypes/bizzns.articles.cnd;reregister:=true,
+					nodetypes/app.cnd;reregister:=true
+				</Sling-Nodetypes>
+			   
+			   <!-- Delegate Bundle content as resource -->
+				<Sling-Bundle-Resources>
+					/apps/bizzns					
+				</Sling-Bundle-Resources>
+
+				<Export-Package>
+					 cms.jcr,
+					 cms.servlet,
+					 cms.job,
+					 cms.operation,
+					!com.bizzns.impl.*
+				</Export-Package>
+				
+				<Private-Package>
+				    cms.servlet.*,
+				    cms.job.*,
+				    cms.operation.*,
+				    cms.jcr.*
+				</Private-Package>
+				
+
+				<Import-Package>			 
+                    org.slf4j.*,
+					*;resolution:=optional
+				</Import-Package>
+				<Embed-Dependency>
+					org.apache.sling.commons.osgi;inline="org/apache/sling/commons/osgi/OsgiUtil.*",
+					commons-lang;inline="org/apache/commons/lang/StringUtils.class",
+					commons-codec;inline="org/apache/commons/codec/binary/Base64.*
+					|org/apache/commons/codec/binary/Hex*
+					|org/apache/commons/codec/binary/StringUtils*
+					|org/apache/commons/codec/BinaryEncoder*
+					|org/apache/commons/codec/BinaryDecoder*
+					|org/apache/commons/codec/Encoder*
+					|org/apache/commons/codec/Decoder*
+					|org/apache/commons/codec/EncoderException*
+					|org/apache/commons/codec/DecoderException*",
+					com.springsource.com.lowagie.text;geronimo-javamail_1.4_mail
+				</Embed-Dependency>
+			</properties>
+		</profile> 
+	</profiles>
+
+	 
+</project>

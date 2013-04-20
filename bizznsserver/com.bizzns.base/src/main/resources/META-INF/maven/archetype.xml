@@ -1,0 +1,31 @@
+<archetype xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0 http://maven.apache.org/xsd/archetype-1.0.0.xsd">
+  <id>com.bizzns.base</id>
+  <sources>
+      <source>src/main/java/placeholder.txt</source>
+  </sources>
+  <resources>
+      <resource>src/main/resources/placeholder.txt</resource>
+      <resource>src/main/resources/initial-content/placeholder.txt</resource>  
+      <resource>src/main/resources/META-INF/placeholder.txt</resource>     
+      <resource>src/main/resources/nodetypes/placeholder.cnd</resource>     
+      <resource>src/main/resources/OSGI-INF/placeholder.txt</resource>         
+  </resources>
+  <testSources>
+         <source>src/test/java/placeholder.txt</source>
+  </testSources>
+  <testResources>
+         <resource>src/test/resources/placeholder.txt</resource>
+  </testResources>
+  <siteResources>
+      
+  </siteResources>
+  
+ 
+  
+  
+  
+  
+  
+  
+</archetype>

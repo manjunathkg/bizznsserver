@@ -74,6 +74,7 @@ load("header.esp");
 			<h3>Entries</h3>
 			<div>
                         <h3><a href='/content/bizzns/cms/.pdf'>Export list</a></h3>
+                       <p> <%=result%> :: query was " /jcr:root/content/bizzns/cms/*/*/*/element(*, nt:unstructured) order by @created descending "</p>
 	                <%
 			        while(result.hasNext()) {
 			        	post = result.nextNode()

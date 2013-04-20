@@ -12,14 +12,15 @@
  
    <!--  Source repository for this bundle -->
    <scm>
-      <connection>scm:git:git://github.com/manjunathkg/bizzns/com.bizzns.base.git</connection>
-      <developerConnection>scm:git:git://github.com/manjunathkg/bizzns/com.bizzns.base.git</developerConnection>
-      <url>https://github.com/manjunathkg/bizzns/com.bizzns.base</url>
+      <connection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.base.git</connection>
+      <developerConnection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.base.git</developerConnection>
+      <url>https://github.com/manjunathkg/bizznsserver/com.bizzns.base</url>
    </scm> 
   
   
   
    <!--  values for current bundle -->
+     <groupId>com.bizzns</groupId>
 	<artifactId>com.bizzns.base</artifactId>
 	<packaging>bundle</packaging>
 	<description>Base system files - js, css and images used by all bizzns systems and base nodes</description>

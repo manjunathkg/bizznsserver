@@ -44,7 +44,7 @@ load("header.esp");
 
                                 <%
                                 var queryManager = currentNode.getSession().getWorkspace().getQueryManager();
-                                var query = queryManager.createQuery("/jcr:root/content/bizzns/cms/*/*/*/element(*, nt:unstructured) order by @created ascending", "xpath");
+                                var query = queryManager.createQuery("/jcr:root/content/bizzns/cms/*/*/*/element(*, sling:Folder) order by @created ascending", "xpath");
                                 var result = query.execute().getNodes();
 
 			        while(result.hasNext()) {
