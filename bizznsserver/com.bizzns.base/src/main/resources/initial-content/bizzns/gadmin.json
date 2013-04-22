@@ -1,5 +1,0 @@
-{ 
-	"name": "GlobalAdmin", 
-	"sling:resourceType": "bizzns/admin/main",
-	"jcr:primaryNodeType":"sling:Folder"
-}

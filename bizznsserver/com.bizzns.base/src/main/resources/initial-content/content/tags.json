@@ -1,6 +1,6 @@
 { 
 	"name": "tags",
 	"primaryNodeType": "nt:unstructured",
-	"sling:resourceType": "bizzns/cms",
+	"sling:resourceType": "/apps/bizzns/cms/main",
 	"jcr:primaryType": "nt:unstructured" 
 }

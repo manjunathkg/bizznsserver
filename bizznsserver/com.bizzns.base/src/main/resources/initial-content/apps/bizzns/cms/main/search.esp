@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+<title>Bizzns CMS</title>
+<%
+load("header.esp");
+%>
+</head>
+<body>
+<div id="lCenter">
+	<div id="desktop">
+		<%
+		load("menu.esp");
+		%>
+		<div id="contentPanel" class="centralPanel">
+			<h3>Search panel</h3>
+			<div>
+                                <%
+                                if((request.getParameter('qtitle'))||(request.getParameter('qtext'))) {
+                                    var queryManager = currentNode.getSession().getWorkspace().getQueryManager();
+                                    if (request.getParameter('qtitle'))
+                                        var query = queryManager.createQuery("/jcr:root/content/bizzns/data/cms/*/*/*/element(*, sling:Folder)[jcr:like(@title, '%"+request.getParameter("qtitle")+"%')] order by @created descending", "xpath");
+                                    else if (request.getParameter('qtext'))
+                                        var query = queryManager.createQuery("/jcr:root/content/bizzns/data/cms/*/*/*/element(*, sling:Folder)[jcr:like(@text, '%"+request.getParameter("qtext")+"%')] order by @created descending", "xpath");
+                                    
+                                    var result = query.execute().getNodes();
+                                    while(result.hasNext()) {
+                                        post = result.nextNode();
+                                        %>
+                                        <h3><a href="<%= post.getPath() %>.article"><%=post.title%></a></h3>
+                                    <%}
+                                }
+                                else if (request.getParameter('qtag')) {
+                                    var queryManager = currentNode.getSession().getWorkspace().getQueryManager();
+                                    var searchString =  "/jcr:root/content/tags//element(*,sling:Folder)[fn:name()= '"+request.getParameter("qtag")+"'] order by @created descending";
+                                    var query = queryManager.createQuery(searchString, "xpath");
+                                    var result = query.execute().getNodes();
+                                    var session = currentNode.getSession();
+                                    if (result.hasNext()) {
+                                        var uuids=result.nextNode().getProperty("UUIDs").getValues();
+                                        for(var i =0; i<uuids.length; i++) {
+                                            var uuid=uuids[i];
+                                            var nodeR=session.getNodeByUUID(uuid.getString());
+                                            %>
+
+                                            <a href='<%=nodeR.getPath() %>.article'><%=nodeR.title%></a><br>
+
+                                            <%
+                                        }
+                                    }
+                                }
+                                else {%>
+
+                                    <br/>
+                                    <br/>
+                                    Search by title:<br/><br/>
+                                    <form method="GET" action="cms/.search">
+                                    <input type="text" name="qtitle" size="20" value=""/>
+                                    <input type="submit" id="submit" name="submit" value="Search"/>
+                                    </form>
+                                    <br/><br/>
+                                    <br/>
+                                    <br/>
+                                    Search by text content:<br/><br/>
+                                    <form method="GET" action="cms/.search">
+                                    <input type="text" name="qtext" size="20" value=""/>
+                                    <input type="submit" id="submit" name="submit" value="Search"/>
+                                    </form>
+                                    <br/><br/>
+                                    <br/>
+                                    <br/>
+                                    Search by tag content:<br/><br/>
+                                    <form method="GET" action="/cms/.search">
+                                    <input type="text" name="qtag" size="20" value=""/>
+                                    <input type="submit" id="submit" name="submit" value="Search"/>
+                                    </form>
+                                    <br/><br/>
+                                <%}%>
+
+                        </div>
+		    </div>
+	</div>
+</div>
+
+</body>
+</html>

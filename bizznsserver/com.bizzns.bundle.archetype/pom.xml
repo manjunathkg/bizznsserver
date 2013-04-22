@@ -75,7 +75,7 @@
 			   
 			   <!-- Delegate Bundle content as resource -->
 				<Sling-Bundle-Resources>
-					/apps/bizzns					
+					/content/bizzns/apps					
 				</Sling-Bundle-Resources>
 
 				<Export-Package>

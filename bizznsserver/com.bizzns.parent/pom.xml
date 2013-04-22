@@ -828,8 +828,12 @@ on 64bit platforms: MAVEN_OPTS="-Xmx512M -XX:MaxPermSize=512M"
 							<execution>
 								<id>install-bundle</id>
 								<goals>
+									<goal>validate</goal>
 									<goal>install</goal>
 								</goals>
+								<configuration>
+                                    <mountByFS>false</mountByFS>
+                                </configuration>
 							</execution>
 						</executions>
 					</plugin>

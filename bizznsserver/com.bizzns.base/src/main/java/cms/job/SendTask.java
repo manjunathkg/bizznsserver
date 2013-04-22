@@ -27,7 +27,7 @@ public class SendTask implements Job {
     private String text;
     private javax.jcr.Session session;
     private final String TAG_PATH = "/content/tags";
-    private final String BIZZNS_CMS_ROOT = "/content/bizzns/cms";
+    private final String BIZZNS_CMS_ROOT = "/content/bizzns/data/articles";
     private boolean useText;
 
     public SendTask() {

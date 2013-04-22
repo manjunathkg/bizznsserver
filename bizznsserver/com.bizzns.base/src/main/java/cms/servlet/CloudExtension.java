@@ -91,7 +91,7 @@ public class CloudExtension extends SlingAllMethodsServlet {
                 Node node=iterator.nextNode();
                 String name=node.getName();
                 String count=node.getProperty("count").getString();
-                buffer.append("<a href='/content/bizzns/cms/.taglist?tag=").append(name).append("' style='").append(Integer.parseInt(count)*5).append("'>").append(name).append("</a>");
+                buffer.append("<a href='/cms/.taglist?tag=").append(name).append("' style='").append(Integer.parseInt(count)*5).append("'>").append(name).append("</a>");
             }
         }
         buffer.append("</tags>");

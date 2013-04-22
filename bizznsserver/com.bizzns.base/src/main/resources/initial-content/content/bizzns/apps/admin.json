@@ -1,0 +1,6 @@
+{ 
+	"name": "GlobalAdmin", 
+	"sling:resourceType": "/apps/bizzns/admin/main",
+	"primaryNodeType":"nt:unstructured",
+	"jcr:primaryType" :"sling:Folder"
+}

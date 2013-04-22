@@ -33,7 +33,7 @@ public class TagGenerator implements EventListener {
     static final String VENDOR = "service.vendor";
     private Session session;
     private ObservationManager observationManager;
-    private final String CONTENT_PATH = "/content/bizzns/cms";
+    private final String CONTENT_PATH = "/content/bizzns/data/articles";
     private final String TAG_PATH="/content/tags";
 
     @Reference

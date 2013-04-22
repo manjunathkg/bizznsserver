@@ -1,0 +1,5 @@
+{ 
+	"name": "bizzns.data",  
+	"primaryNodeType":"nt:unstructured",
+	"jcr:primaryType":"sling:Folder"
+}

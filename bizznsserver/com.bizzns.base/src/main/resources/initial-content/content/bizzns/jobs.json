@@ -1,0 +1,5 @@
+{ 
+	"name": "bizzns.jobs",  
+	"jcr:primaryNodeType":"nt:unstructured",
+	"jcr:primaryType":"sling:Folder"
+}

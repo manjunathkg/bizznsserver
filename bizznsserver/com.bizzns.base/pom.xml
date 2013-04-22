@@ -58,7 +58,7 @@
 				
 				<!-- initial content to be loaded on bundle installation -->
 				<Sling-Initial-Content>
-					initial-content;overwrite:=true;uninstall:=true
+					initial-content;overwrite:=true;uninstall:=false
 				</Sling-Initial-Content>
 				
 				<!-- Copy the files from filesystem to Bundle -->
@@ -75,7 +75,9 @@
 			   
 			   <!-- Delegate Bundle content as resource -->
 				<Sling-Bundle-Resources>
-					/apps/bizzns					
+					 /content;path:=/initial-content/content,
+					 /cms;path:=/initial-content/content/bizzns/apps/cms,
+					 /admin;path=/content/bizzns/apps/admin					 
 				</Sling-Bundle-Resources>
 
 				<Export-Package>
@@ -101,14 +103,15 @@
 				<Embed-Dependency>
 					org.apache.sling.commons.osgi;inline="org/apache/sling/commons/osgi/OsgiUtil.*",
 					commons-lang;inline="org/apache/commons/lang/StringUtils.class",
-					commons-codec;inline="org/apache/commons/codec/binary/Base64.*
-					|org/apache/commons/codec/binary/Hex*
-					|org/apache/commons/codec/binary/StringUtils*
-					|org/apache/commons/codec/BinaryEncoder*
-					|org/apache/commons/codec/BinaryDecoder*
-					|org/apache/commons/codec/Encoder*
-					|org/apache/commons/codec/Decoder*
-					|org/apache/commons/codec/EncoderException*
+					commons-codec;inline="org/apache/commons/codec/binary/Base64.*,
+					com.lowagie.text.*,
+					|org/apache/commons/codec/binary/Hex*,
+					|org/apache/commons/codec/binary/StringUtils*,
+					|org/apache/commons/codec/BinaryEncoder*,
+					|org/apache/commons/codec/BinaryDecoder*,
+					|org/apache/commons/codec/Encoder*,
+					|org/apache/commons/codec/Decoder*,
+					|org/apache/commons/codec/EncoderException*,
 					|org/apache/commons/codec/DecoderException*",
 					com.springsource.com.lowagie.text;geronimo-javamail_1.4_mail
 				</Embed-Dependency>

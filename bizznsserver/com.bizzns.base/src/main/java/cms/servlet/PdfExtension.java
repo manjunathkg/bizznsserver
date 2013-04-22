@@ -53,7 +53,7 @@ public class PdfExtension extends SlingAllMethodsServlet {
     @Property(value = "pdf")
     static final String EXTENSIONS = "sling.servlet.extensions";
     private final String ENCODING = "UTF-8";
-    private final String BIZZNS_CMS_ROOT = "/content/bizzns/cms";
+    private final String BIZZNS_CMS_ROOT = "/cms";
     private final String SERVER_URL = "http://localhost:8080";
     @Reference
     private SlingRepository repository;
@@ -147,7 +147,7 @@ public class PdfExtension extends SlingAllMethodsServlet {
         Paragraph intro=new Paragraph("List of articles in Bizzns CMS\n\n");
         document.add(intro);
         QueryManager queryManager = rootNode.getSession().getWorkspace().getQueryManager();  
-        Query query = queryManager.createQuery("/jcr:root/content/bizzns/cms/*/*/*/element(*, sling.Folder) order by @created descending", "xpath");
+        Query query = queryManager.createQuery("/jcr:root/content/bizzns/data/cms/*/*/*/element(*, sling.Folder) order by @created descending", "xpath");
         NodeIterator iterator=query.execute().getNodes();
         Node tempNode=null;
         String title=null;
