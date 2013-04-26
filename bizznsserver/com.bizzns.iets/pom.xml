@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+  <!--  parent pom -->
+  <parent>
+    <groupId>com.bizzns</groupId>
+    <artifactId>com.bizzns.parent</artifactId>
+      <version>2-SNAPSHOT</version>
+	  <relativePath>../com.bizzns.parent</relativePath>
+  </parent>
+ 
+   <!--  Source repository for this bundle -->
+   <scm>
+      <connection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.iets.git</connection>
+      <developerConnection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.iets.git</developerConnection>
+      <url>https://github.com/manjunathkg/bizznsserver/com.bizzns.iets</url>
+   </scm> 
+  
+  
+  
+   <!--  values for current bundle -->
+     <groupId>com.bizzns</groupId>
+	<artifactId>com.bizzns.iets</artifactId>
+	<packaging>bundle</packaging>
+	<description>Iets system files - js, css and images used by all bizzns systems and iets nodes</description>
+	<name>bizzns :: iets:: libraries :: js,css, images etc + iets nodes and types</name>
+	<version>1.0.1-SNAPSHOT</version> 
+ 
+	<build>
+		<plugins> 
+		    <!--  Convert service annotations to service definitions needed by felix -->
+		    <plugin>
+        		<groupId>org.apache.felix</groupId>
+        		<artifactId>maven-scr-plugin</artifactId> 
+      		</plugin>
+		    
+		    <!--  bundle the project using a profile - we can have development profile, qa profile etx.. only development is there for now -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId> 				 
+				<extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>development</id> <!--  parent pomdefines variables expected.. we define the values for this particular profile -->
+			<properties>
+				<Felix-Initial-Configuration>configuration</Felix-Initial-Configuration>
+				<Bundle-Category>patrick-bundle-category</Bundle-Category>
+				<Sling-Initial-Content>
+					initial-content;overwrite:=false;uninstall:=true
+				</Sling-Initial-Content>
+				<Include-Resource>
+					{maven-resources} 
+				</Include-Resource>
+				<Sling-Nodetypes>
+				</Sling-Nodetypes>
+				<Sling-Bundle-Resources>
+				</Sling-Bundle-Resources>
+				<Export-Package>
+				    patrick.servlet.*
+				</Export-Package>
+				<Private-Package>
+				</Private-Package>
+				<Import-Package>			 
+					*;
+				</Import-Package>
+				<Embed-Dependency>
+				</Embed-Dependency>
+			</properties>
+		</profile> 
+	</profiles>
+</project>

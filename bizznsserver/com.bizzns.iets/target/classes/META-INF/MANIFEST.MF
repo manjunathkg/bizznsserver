@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1367016794129
+Build-Jdk: 1.6.0_41
+Built-By: E543443
+Bundle-Category: patrick-bundle-category
+Bundle-Description: Iets system files - js, css and images used by all b
+ izzns systems and iets nodes
+Bundle-DocURL: http://bizzns.com
+Bundle-License: http://bizzns.com/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: bizzns :: iets:: libraries :: js,css, images etc + iets nod
+ es and types
+Bundle-SymbolicName: com.bizzns.iets
+Bundle-Vendor: bizzns.com
+Bundle-Version: 1.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: patrick.servlet;uses:="org.apache.sling.api.servlets,org
+ .apache.sling.api,org.osgi.service.component,org.slf4j";version="1.0.1.
+ SNAPSHOT"
+Felix-Initial-Configuration: configuration
+Import-Package: org.apache.sling.api;version="[2.1,3)",org.apache.sling.
+ api.servlets;version="[2.1,3)",org.osgi.service.component;version="[1.1
+ ,2)",org.slf4j;version="[1.6,2)"
+Service-Component: OSGI-INF/patrick.servlet.PatrickServlet.xml
+Sling-Initial-Content: initial-content;overwrite:=false;uninstall:=true
+Tool: Bnd-1.50.0

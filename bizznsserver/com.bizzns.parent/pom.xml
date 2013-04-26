@@ -50,7 +50,7 @@
 		<jodconverter.version>3.0-SNAPSHOT</jodconverter.version>
 		<jodreports.version>2.4.0</jodreports.version>
 		<sling.adapter.version>2.1.0</sling.adapter.version>
-		<sling.api.version>2.3.0</sling.api.version>
+		<sling.api.version>2.1.0</sling.api.version>
 		<sling.auth.core.version>1.1.0</sling.auth.core.version>
 		<sling.auth.form.version>1.0.2</sling.auth.form.version>
 		<sling.auth.openid.version>1.0.2</sling.auth.openid.version>

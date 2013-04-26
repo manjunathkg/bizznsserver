@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <echo>******************************************************************************
+On most platforms, you&apos;ll get OutOfMemoryErrors when building unless you set
+on 32bit platforms: MAVEN_OPTS=&quot;-Xmx256M -XX:MaxPermSize=256M&quot;
+on 64bit platforms: MAVEN_OPTS=&quot;-Xmx512M -XX:MaxPermSize=512M&quot;
+******************************************************************************</echo>
+</target>
+</project>
