@@ -1,6 +1,9 @@
 { 
-	"name": "GlobalAdmin", 
+	"name":"GlobalAdmin", 
 	"sling:resourceType": "/apps/bizzns/admin/main",
 	"primaryNodeType":"nt:unstructured",
-	"jcr:primaryType" :"sling:Folder"
+	"jcr:primaryType" :"sling:Folder",
+	"sling:vanityPath" : "gadmin"
 }
+
+ 

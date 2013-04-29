@@ -1,0 +1,5 @@
+{
+"name" : "create",
+"sling:resourceType" : "/libs/jsoneditor",
+ "jcr:primaryNodeType":"nt:unstructured" 
+}

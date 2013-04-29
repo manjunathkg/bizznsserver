@@ -985,6 +985,23 @@ on 64bit platforms: MAVEN_OPTS="-Xmx512M -XX:MaxPermSize=512M"
 				<version>${sling.api.version}</version>
 				<scope>provided</scope>
 			</dependency>
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.engine</artifactId>
+            <version>${sling.engine.version}</version>
+			<scope>provided</scope>
+        </dependency> 
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.settings</artifactId>
+   			<version>${sling.settings.version}</version> 				
+   			<scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.servlets.post</artifactId>
+			<version>${sling.servlets.post.version}</version>
+        </dependency>
 			<dependency>
 				<groupId>org.apache.sling</groupId>
 				<artifactId>org.apache.sling.commons.classloader</artifactId>
@@ -1027,12 +1044,7 @@ on 64bit platforms: MAVEN_OPTS="-Xmx512M -XX:MaxPermSize=512M"
 				<groupId>org.apache.sling</groupId>
 				<artifactId>org.apache.sling.jcr.base</artifactId>
 				<version>${sling.jcr.base.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.sling</groupId>
-				<artifactId>org.apache.sling.engine</artifactId>
-				<version>${sling.engine.version}</version>
-			</dependency>
+			</dependency> 
 			<dependency>
 				<groupId>org.apache.sling</groupId>
 				<artifactId>org.apache.sling.i18n</artifactId>

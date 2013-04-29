@@ -2,5 +2,5 @@
 	"name": "bizzns.base", 
 	"sling:resourceType": "bizzns",
 	"jcr:primaryNodeType":"nt:unstructured",
-	"jcr:primaryType":"sling:Folder"
+	"jcr:primaryType":"bizzns:app"
 }

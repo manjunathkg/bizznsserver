@@ -55,7 +55,7 @@ load("header.esp");
                                     <br/>
                                     <br/>
                                     Search by title:<br/><br/>
-                                    <form method="GET" action="cms/.search">
+                                    <form method="GET" action="/cms/.search">
                                     <input type="text" name="qtitle" size="20" value=""/>
                                     <input type="submit" id="submit" name="submit" value="Search"/>
                                     </form>
@@ -63,7 +63,7 @@ load("header.esp");
                                     <br/>
                                     <br/>
                                     Search by text content:<br/><br/>
-                                    <form method="GET" action="cms/.search">
+                                    <form method="GET" action="/cms/.search">
                                     <input type="text" name="qtext" size="20" value=""/>
                                     <input type="submit" id="submit" name="submit" value="Search"/>
                                     </form>

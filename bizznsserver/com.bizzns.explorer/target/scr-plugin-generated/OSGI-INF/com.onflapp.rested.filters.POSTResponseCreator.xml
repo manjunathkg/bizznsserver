@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component name="com.onflapp.rested.filters.POSTResponseCreator">
+        <implementation class="com.onflapp.rested.filters.POSTResponseCreator"/>
+        <service servicefactory="false">
+            <provide interface="org.apache.sling.servlets.post.PostResponseCreator"/>
+        </service>
+        <property name="service.vendor" value="bizzns.com"/>
+        <property name="service.pid" value="com.onflapp.rested.filters.POSTResponseCreator"/>
+    </scr:component>
+</components>

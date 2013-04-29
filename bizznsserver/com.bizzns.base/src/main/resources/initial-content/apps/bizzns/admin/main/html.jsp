@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="mainnav">
 <jsp:directive.include file="includes/html_head.jsp" />
 
-<body>
 
+<body>
+<script src="/libs/base/js/angular/latest/angular.min.js"></script>
 <jsp:directive.include file="includes/top_navbar.jsp" />    
 <jsp:directive.include file="includes/top_navbar_main.jsp" />    
     
@@ -346,6 +347,8 @@
 <!-- Javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+
+
 <script src="/libs/admin/js/jquery-1.8.3.min.js"></script>
 <script src="/libs/admin/js/jquery-ui-1.10.0.custom.min.js"></script>
 <script src="/libs/admin/js/bootstrap.min.js"></script>
@@ -359,6 +362,9 @@
 <script src="/libs/admin/js/charts/area.js"></script>
 <script src="/libs/admin/js/charts/donut.js"></script>
 
+
+
+<script src="/libs/components/mainnav/mainnav.js"></script>
   
 
 <a id="back-to-top" href="/bizzns/admin/main/index.html#top" style="display: none;"><i class="icon-chevron-up"></i></a></body></html>

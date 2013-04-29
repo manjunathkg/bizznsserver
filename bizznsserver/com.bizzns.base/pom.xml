@@ -58,7 +58,7 @@
 				
 				<!-- initial content to be loaded on bundle installation -->
 				<Sling-Initial-Content>
-					initial-content;overwrite:=true;uninstall:=false
+					initial-content;overwrite:=false;uninstall:=false
 				</Sling-Initial-Content>
 				
 				<!-- Copy the files from filesystem to Bundle -->
@@ -75,9 +75,7 @@
 			   
 			   <!-- Delegate Bundle content as resource -->
 				<Sling-Bundle-Resources>
-					 /content;path:=/initial-content/content,
-					 /cms;path:=/initial-content/content/bizzns/apps/cms,
-					 /admin;path=/content/bizzns/apps/admin					 
+					 /content;path:=/initial-content/content 				 
 				</Sling-Bundle-Resources>
 
 				<Export-Package>

@@ -1,8 +1,0 @@
-{  
-    "jcr:primaryType": "nt:unstructured" ,    
-	"sling:resourceType": "/bizzns/admin",
-    "Name" : "Gloabl Admin App",
-    "Title" : "The Bizzns Global Admin app ",
-    "Owner" : "manjunath kaliyur",
-    "isLive" : "false"     
-}

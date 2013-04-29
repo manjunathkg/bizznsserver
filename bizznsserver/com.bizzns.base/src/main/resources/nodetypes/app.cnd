@@ -3,12 +3,25 @@
 <sling = 'http://sling.apache.org/jcr/sling/1.0'>
 
 [bizzns:app] > bizzns:base 
+	+ bizzns:mainNav (bizzns:mainNav) COPY sns
+	
+	/*
+	 * topStatusBar Child Node
+	 */
+	+ bizzns:topStatusBar (bizzns:topStatusBar) COPY
+	+ nt:unstructured COPY
+	+ sling:Folder COPY
 	- Name (STRING) COPY
 	- Title (STRING) COPY
 	- Version (LONG) COPY
 	- 'Release Date' (DATE) COPY
 	- Owner (STRING) COPY
 	- isLive (STRING) COPY
+	
+	/*
+	 * HomePageURL for this app
+	 */
+	- homePageURL (URI) COPY
 
 [bizzns:webapp] > bizzns:app 
 	- devURL (STRING) COPY
@@ -30,4 +43,33 @@
 	 */
 	- linkName (STRING) = 'Link Name - Used to identify the link- Enter any string' COPY
 	- linkText (STRING) = 'link text which is diplayed for the link' COPY
+	- linkTooltip (STRING) = 'tooltip' COPY
+
+[bizzns:mainNav] 
+	
+	/*
+	 * classNames we want to feed in into the component.
+	 */
+	- cssClassNames (STRING) protected multiple COPY nofulltext
+	
+	/*
+	 * Name of the directive whih draws this mainNav component
+	 */
+	- directiveName (STRING) COPY nofulltext noqueryorder
+	
+	/*
+	 * URL which feeds the data to be used by the directive/component. For ex: this url 
+	 * 	 * 	 * 	 * feeds the main menu item list consumed by mainmenu directive/component
+	 */
+	- directiveURL (URI) protected COPY nofulltext noqueryorder
+
+[bizzns:topStatusBar] 
+
+[bizzns:leftNav] 
+
+[bizzns:footer] 
+
+[bizzns:mainContent] 
+
+[bizzns:base] > bizzns:base 
 
