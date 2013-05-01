@@ -1,4 +1,9 @@
-var app=angular.module('manjuApp',['mainnav','restangular']);
+var app=angular.module('manjuApp',[ 'topstatusbar',                                    
+                                    'mainnav',
+                                   	'header',
+                                   	'footerextra',
+                                   	'footer',
+                                   	'restangular']);
 
 //Configure Restangular at app level
 app.config(function(RestangularProvider){
@@ -32,6 +37,5 @@ app.factory('AppService', function(){
 
 //Define appController - global app controller for manju
 app.controller('appController',function($scope,AppService,Restangular){
-	$scope.data=Restangular.all(content).getList();
-	
+	$scope.data=Restangular.all(content).getList();	
 });
