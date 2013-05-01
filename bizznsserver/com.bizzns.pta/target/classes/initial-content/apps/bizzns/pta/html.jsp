@@ -3,6 +3,7 @@
 <title>Driving Sling with jQuery</title>
 <script type="text/javascript"
 	src="/libs/base/jquery/v1_9_1/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="/libs/base/gumby/v2.1/css/gumby.css"/>
 </head>
 <body>
 	<script>
