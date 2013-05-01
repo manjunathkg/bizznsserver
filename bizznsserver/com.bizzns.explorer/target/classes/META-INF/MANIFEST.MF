@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1367213835359
+Bnd-LastModified: 1367259610192
 Build-Jdk: 1.6.0_21
 Built-By: S897248
 Bundle-Category: bizzns-explorer

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" ng-app="mainnav">
+<html lang="en" ng-app="manjuApp">
  
 <head>
 	
@@ -55,7 +55,11 @@
 	</div> <!-- /subnavbar-inner -->
 
 </div> <!-- /subnavbar -->    
-    
+ 
+ 
+ 
+ 
+ 
  
     
 
@@ -75,6 +79,8 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/libs/base/js/angular/latest/angular.min.js"></script> 
+<script src="/libs/base/js/angular-resource/1.1.4/angular-resource.min.js"></script> 
+<script src="/libs/base/js/restangular/restangular.min.js"></script>
 
 <script src="/libs/admin/js/jquery-1.8.3.min.js"></script>
 <script src="/libs/admin/js/jquery-ui-1.10.0.custom.min.js"></script>
@@ -88,10 +94,14 @@
 
 <script src="/libs/admin/js/charts/area.js"></script>
 <script src="/libs/admin/js/charts/donut.js"></script>
-
-
-
 <script src="/libs/components/mainnav/mainnav.js"></script> 
+<script src="js/manju.js"></script>
   
 
-<a id="back-to-top" href="/bizzns/admin/main/index.html#top" style="display: none;"><i class="icon-chevron-up"></i></a></body></html>
+<a id="back-to-top" href="/bizzns/admin/main/index.html#top" style="display: none;"><i class="icon-chevron-up"></i></a>
+ 
+
+
+
+
+</body></html>
