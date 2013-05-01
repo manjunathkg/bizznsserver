@@ -1,0 +1,5 @@
+{ 
+	"name": "pta", 
+	"sling:resourceType": "/apps/bizzns/pta",
+	"jcr:primaryType":"nt:unstructured"
+}
