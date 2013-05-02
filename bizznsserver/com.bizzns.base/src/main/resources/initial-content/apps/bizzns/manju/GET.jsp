@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html lang="en" ng-app="mainnav">
+<html lang="en" ng-app="manjuApp">
  
 <head>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Dashboard :: Base Admin</title>
+    <title>Dashboard :: Manju App</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">    
@@ -36,45 +36,18 @@
 
 
 <body>
-<div class="subnavbar">
-
-	<div class="subnavbar-inner">
-	
-		<div class="container">
-			
-			<a class="btn-subnavbar collapsed" data-toggle="collapse" data-target=".subnav-collapse">
-				<i class="icon-reorder"></i>
-			</a>
-
-			<div class="subnav-collapse collapse"> 
-				<main-nav> </main-nav> 
-			</div> <!-- /.subnav-collapse -->
-
-		</div> <!-- /container -->
-	
-	</div> <!-- /subnavbar-inner -->
-
-</div> <!-- /subnavbar -->    
-    
- 
-    
-
-<jsp:directive.include file="/apps/bizzns/admin/main/includes/bottom_extra.jsp" />
-<jsp:directive.include file="/apps/bizzns/admin/main/includes/footer.jsp" />
-
-
-    
-    
- 
-
-
-
-    
+    <top-status-bar></top-status-bar>
+	<header></header>   
+	<footer-extra></footer-extra> 
+	<footer></footer> 
 
 <!-- Javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/libs/base/js/angular/latest/angular.min.js"></script> 
+<script src="/libs/base/js/angular-resource/1.1.4/angular-resource.min.js"></script>
+<script src="/libs/base/js/lodash/1.2.1/lodash-min.js"></script> 
+<script src="/libs/base/js/restangular/restangular.min.js"></script>
 
 <script src="/libs/admin/js/jquery-1.8.3.min.js"></script>
 <script src="/libs/admin/js/jquery-ui-1.10.0.custom.min.js"></script>
@@ -88,10 +61,18 @@
 
 <script src="/libs/admin/js/charts/area.js"></script>
 <script src="/libs/admin/js/charts/donut.js"></script>
-
-
-
+<script src="/libs/components/topStatusBar/topStatusBar.js"></script> 
+<script src="/libs/components/header/header.js"></script> 
 <script src="/libs/components/mainnav/mainnav.js"></script> 
+<script src="/libs/components/manju/footerExtra/footerextra.js"></script>
+<script src="/libs/components/footer/footer.js"></script> 
+<script src="/libs/manju/js/manju.js"></script>
   
 
-<a id="back-to-top" href="/bizzns/admin/main/index.html#top" style="display: none;"><i class="icon-chevron-up"></i></a></body></html>
+<a id="back-to-top" href="/bizzns/admin/main/index.html#top" style="display: none;"><i class="icon-chevron-up"></i></a>
+ 
+
+
+
+
+</body></html>
