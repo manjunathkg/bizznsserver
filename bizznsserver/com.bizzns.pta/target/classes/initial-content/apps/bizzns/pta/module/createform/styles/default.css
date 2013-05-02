@@ -1,0 +1,14 @@
+#createForm {
+    border:2px red solid;
+}
+
+label {
+    border:2px solid yellow;
+    float: left;
+    padding-left:30px;
+    font-style:italic;
+    line-height: 1.2;
+    vertical-align: top;
+    text-align:left;
+    width: 110px;
+}
