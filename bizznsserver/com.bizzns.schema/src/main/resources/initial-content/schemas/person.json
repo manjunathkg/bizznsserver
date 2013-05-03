@@ -1,0 +1,11 @@
+{
+	"bizzns:name":"Person",
+	"sling:resourceType" : "/apps/bizzns/schemas",
+ 	"jcr:primaryNodeType":"nt:unstructured",
+    "bizzns:comment": "Use this to represent a person.", 
+    "bizzns:comment_plain": "Somebody.", 
+    "bizzns:id": "Person",
+    "bizzns:label": "Person",
+    "bizzns:firstName": "First name",
+    "bizzns:lastName": "Last name"
+}

@@ -1,0 +1,10 @@
+{
+	"bizzns:name":"Volunteer",
+	"sling:resourceType" : "/apps/bizzns/schemas",
+ 	"jcr:primaryNodeType":"nt:unstructured",
+    "bizzns:comment": "Use this to represent a volunteer.", 
+    "bizzns:comment_plain": "Somebody who volunteers.", 
+    "bizzns:id": "Volunteer",
+    "bizzns:label": "Volunteer",
+    "bizzns:person": "bizzn:person"
+}

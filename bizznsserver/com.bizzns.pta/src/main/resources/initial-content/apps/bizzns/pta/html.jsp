@@ -1,3 +1,5 @@
+<%@ page import="org.apache.sling.api.resource.Resource"%>
+<%@ page import="org.apache.sling.api.resource.ResourceResolver"%>
 <!doctype html>
 <html ng-app>
 	<head>
@@ -18,6 +20,10 @@ function Ctrl($scope) {
 		</script>
 	</head>
 	<body>
+		<a href="#" id="loadModule1">Load module 1</a>
+		<a href="#" id="loadModule2">Load module 2</a>
+		<a href="#" id="loadModule3">Load module 3</a>
+		
 		<div ng-controller="Ctrl">
 			<select ng-model="template" ng-options="t.name for t in templates">
 				<option value="">(blank)</option>
