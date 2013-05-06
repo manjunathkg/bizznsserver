@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+  <!--  parent pom -->
+  <parent>
+    <groupId>com.bizzns</groupId>
+    <artifactId>com.bizzns.parent</artifactId>
+      <version>2-SNAPSHOT</version>
+	  <relativePath>../com.bizzns.parent</relativePath>
+  </parent>
+ 
+   <!--  Source repository for this bundle -->
+   <scm>
+      <connection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.filters.git</connection>
+      <developerConnection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.filters.git</developerConnection>
+      <url>https://github.com/manjunathkg/bizznsserver/com.bizzns.filters</url>
+   </scm> 
+  
+  
+  
+   <!--  values for current bundle -->
+     <groupId>com.bizzns</groupId>
+	<artifactId>com.bizzns.filters</artifactId>
+	<packaging>bundle</packaging>
+	<description>Bizzns System Filters - Global filters - wro4j </description>
+	<name>bizzns :: filters:: wro4j filter</name>
+	<version>1.0</version> 
+ 
+	<build>
+		<plugins>  
+			<plugin>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>maven-sling-plugin</artifactId>
+			</plugin>
+		    <!--  Convert service annotations to service definitions needed by felix -->
+		    <plugin>
+        		<groupId>org.apache.felix</groupId>
+        		<artifactId>maven-scr-plugin</artifactId> 
+      		</plugin>
+		    
+		    <!--  bundle the project using a profile - we can have development profile, qa profile etx.. only development is there for now -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId> 				 
+				<extensions>true</extensions>			
+				<configuration>
+					<instructions>
+						<!-- Which java packages are exported for other bundles -->
+						<Import-Package>
+							*;resolution:=optional
+						</Import-Package>
+						<Export-Package> 
+						</Export-Package>
+			                        <Embed-Dependency> 
+			                        </Embed-Dependency>                        
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>development</id> <!--  parent pomdefines variables expected.. we define the values for this particular profile -->
+			<properties>
+				<!-- Iniial bundle configurations (for example FsResource) -->
+				<Felix-Initial-Configuration>
+					configuration
+				</Felix-Initial-Configuration>
+				
+				<Bundle-Category>						     
+                              bizzns-filters
+                </Bundle-Category>
+				
+				<!-- initial content to be loaded on bundle installation -->
+				<Sling-Initial-Content>
+					initial-content;overwrite:=false;uninstall:=false
+				</Sling-Initial-Content>
+				
+				<!-- Copy the files from filesystem to Bundle -->
+				<Include-Resource>
+					{maven-resources} 
+				</Include-Resource>
+
+				<!-- node types to be created -->
+				<Sling-Nodetypes> 
+				</Sling-Nodetypes>
+			   
+			   <!-- Delegate Bundle content as resource -->
+				<Sling-Bundle-Resources>
+					 /content;path:=/initial-content/content 				 
+				</Sling-Bundle-Resources>
+
+				<Export-Package>	com.bizzns.filters.* 
+				</Export-Package>
+				
+				<Private-Package> 
+				</Private-Package>
+				
+
+				<Import-Package> 
+					*;resolution:=optional
+				</Import-Package>
+				<Embed-Dependency> 
+				</Embed-Dependency>
+			</properties>
+		</profile> 
+	</profiles>
+ <dependencies>
+     <dependency>
+	<groupId>org.apache.sling</groupId>
+	<artifactId>org.apache.sling.engine</artifactId>
+	<version>2.2.0</version>
+</dependency>
+</dependencies>
+            
+	 
+</project>

@@ -1,28 +1,14 @@
 var app=angular.module('manjuApp',[ 'topstatusbar',                                    
                                     'mainnav',
                                    	'header',
+                                   	'bizzgrid',
                                    	'footerextra',
                                    	'footer',
                                    	'restangular']);
 
 //Configure Restangular at app level
 app.config(function(RestangularProvider){
-	RestangularProvider.setBaseUrl('/');
-	
-	 RestangularProvider.setExtraFields(['name']);
-	 RestangularProvider.setResponseExtractor(function(response, operation) {
-	        return response.data;
-	 });
-
-	 RestangularProvider.setListTypeIsArray(true);
-
-	 // In this case we configure that the id of each element will be the __id field and we change the Restangular route. We leave the default value for parentResource
-	 RestangularProvider.setRestangularFields({
-	      id: "__id",
-	      route: "restangularRoute"
-	    });
-
-	RestangularProvider.setRequestSuffix('tidy.5.json');
+	RestangularProvider.setBaseUrl('/content'); 
 	
 });
 

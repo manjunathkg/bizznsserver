@@ -38,6 +38,7 @@
 <body>
     <top-status-bar></top-status-bar>
 	<header></header>   
+	<bizz-grid></bizz-grid>
 	<footer-extra></footer-extra> 
 	<footer></footer> 
 
@@ -65,6 +66,7 @@
 <script src="/libs/components/header/header.js"></script> 
 <script src="/libs/components/mainnav/mainnav.js"></script> 
 <script src="/libs/components/manju/footerExtra/footerextra.js"></script>
+<script src="/libs/components/grid/grid.js"></script>
 <script src="/libs/components/footer/footer.js"></script> 
 <script src="/libs/manju/js/manju.js"></script>
   
