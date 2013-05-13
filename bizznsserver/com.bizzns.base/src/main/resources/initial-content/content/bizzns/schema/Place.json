@@ -1,0 +1,87 @@
+ {
+    "type": "Place",
+    "bases": {
+      "Thing": {
+        "description":{
+          "name": "description",
+          "description": "A short description of the item.",
+          "type": "Text"
+        },
+        "image":{
+          "name": "image",
+          "description": "URL of an image of the item.",
+          "type": "URL"
+        },
+        "name":{
+          "name": "name",
+          "description": "The name of the item.",
+          "type": "Text"
+        },
+        "url":{
+          "name": "url",
+          "description": "URL of the item.",
+          "type": "Text"
+        }
+      }
+    },
+    "properties": {
+      "address":{
+        "name": "address",
+        "description": "Physical address of the item.",
+        "type": "PostalAddress"
+      },
+      "aggregateRating":{
+        "name": "aggregateRating",
+        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+        "type": "AggregateRating"
+      },
+      "containedIn":{
+        "name": "containedIn",
+        "description": "The basic containment relation between places.",
+        "type": "Place"
+      },
+      "events":{
+        "name": "events",
+        "description": "The events held at this place or organization.",
+        "type": "Event"
+      },
+      "faxNumber":{
+        "name": "faxNumber",
+        "description": "The fax number.",
+        "type": "Text"
+      },
+      "geo":{
+        "name": "geo",
+        "description": "The geo coordinates of the place.",
+        "type": "GeoCoordinates"
+      },
+      "interactionCount":{
+        "name": "interactionCount",
+        "description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.",
+        "type": "Text"
+      },
+      "maps":{
+        "name": "maps",
+        "description": "A URL to a map of the place.",
+        "type": "Text"
+      },
+      "photos":{
+        "name": "photos",
+        "description": "Photographs of this place.",
+        "type": {
+          "Photograph":{},
+          "ImageObject":{}
+        }
+      },
+      "reviews":{
+        "name": "reviews",
+        "description": "Review of the item.",
+        "type": "Review"
+      },
+      "telephone":{
+        "name": "telephone",
+        "description": "The telephone number.",
+        "type": "Text"
+      }
+    }
+  }
