@@ -1,0 +1,184 @@
+{
+  "type": "IndividualProduct",
+  "version": "Schema Draft Version 1.0a",
+  "bases": {
+    "Thing": {
+      "additionalType": {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
+      "description": {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      "image": {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      "name": {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      "url": {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "URL"
+      }
+    },
+    "Product": {
+      "aggregateRating": {
+        "name": "aggregateRating",
+        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+        "type": "AggregateRating"
+      },
+      "audience": {
+        "name": "audience",
+        "description": "The intended audience of the item, i.e. the group for whom the item was created.",
+        "type": "Audience"
+      },
+      "brand": {
+        "name": "brand",
+        "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+        "type": {
+          "Brand": {},
+          "Organization": {}
+        }
+      },
+      "color": {
+        "name": "color",
+        "description": "The color of the product.",
+        "type": "Text"
+      },
+      "depth": {
+        "name": "depth",
+        "description": "The depth of the product.",
+        "type": {
+          "Distance": {},
+          "QuantitativeValue": {}
+        }
+      },
+      "gtin13": {
+        "name": "gtin13",
+        "description": "The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero.",
+        "type": "Text"
+      },
+      "gtin14": {
+        "name": "gtin14",
+        "description": "The GTIN-14 code of the product, or the product to which the offer refers.",
+        "type": "Text"
+      },
+      "gtin8": {
+        "name": "gtin8",
+        "description": "The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN.",
+        "type": "Text"
+      },
+      "height": {
+        "name": "height",
+        "description": "The height of the item.",
+        "type": {
+          "Distance": {},
+          "QuantitativeValue": {}
+        }
+      },
+      "isAccessoryOrSparePartFor": {
+        "name": "isAccessoryOrSparePartFor",
+        "description": "A pointer to another product (or multiple products) for which this product is an accessory or spare part.",
+        "type": "Product"
+      },
+      "isConsumableFor": {
+        "name": "isConsumableFor",
+        "description": "A pointer to another product (or multiple products) for which this product is a consumable.",
+        "type": "Product"
+      },
+      "isRelatedTo": {
+        "name": "isRelatedTo",
+        "description": "A pointer to another, somehow related product (or multiple products).",
+        "type": "Product"
+      },
+      "isSimilarTo": {
+        "name": "isSimilarTo",
+        "description": "A pointer to another, functionally similar product (or multiple products).",
+        "type": "Product"
+      },
+      "itemCondition": {
+        "name": "itemCondition",
+        "description": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
+        "type": "OfferItemCondition"
+      },
+      "logo": {
+        "name": "logo",
+        "description": "URL of an image for the logo of the item.",
+        "type": "ImageObject"
+      },
+      "manufacturer": {
+        "name": "manufacturer",
+        "description": "The manufacturer of the product.",
+        "type": "Organization"
+      },
+      "model": {
+        "name": "model",
+        "description": "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.",
+        "type": "ProductModel"
+      },
+      "mpn": {
+        "name": "mpn",
+        "description": "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.",
+        "type": "Text"
+      },
+      "offers": {
+        "name": "offers",
+        "description": "An offer to sell this item—for example, an offer to sell a product, the DVD of a movie, or tickets to an event.",
+        "type": "Offer"
+      },
+      "productID": {
+        "name": "productID",
+        "description": "The product identifier, such as ISBN. For example: .",
+        "type": "Text"
+      },
+      "releaseDate": {
+        "name": "releaseDate",
+        "description": "The release date of a product or product model. This can be used to distinguish the exact variant of a product.",
+        "type": "Date"
+      },
+      "review": {
+        "name": "review",
+        "description": "A review of the item.",
+        "type": "Review"
+      },
+      "reviews": {
+        "name": "reviews",
+        "description": "Review of the item (legacy spelling; see singular form, review).",
+        "type": "Review"
+      },
+      "sku": {
+        "name": "sku",
+        "description": "The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.",
+        "type": "Text"
+      },
+      "weight": {
+        "name": "weight",
+        "description": "The weight of the product.",
+        "type": "QuantitativeValue"
+      },
+      "width": {
+        "name": "width",
+        "description": "The width of the item.",
+        "type": {
+          "Distance": {},
+          "QuantitativeValue": {}
+        }
+      }
+    }
+  },
+  "properties": {
+    "serialNumber": {
+      "name": "serialNumber",
+      "description": "The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.",
+      "type": "Text"
+    }
+  }
+}

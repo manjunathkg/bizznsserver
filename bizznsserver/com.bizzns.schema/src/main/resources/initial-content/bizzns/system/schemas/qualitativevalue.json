@@ -1,0 +1,73 @@
+{
+  "type": "QualitativeValue",
+  "version": "Schema Draft Version 1.0a",
+  "bases": {
+    "Thing": {
+      "additionalType": {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
+      "description": {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      "image": {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      "name": {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      "url": {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "URL"
+      }
+    }
+  },
+  "properties": {
+    "equal": {
+      "name": "equal",
+      "description": "This ordering relation for qualitative values indicates that the subject is equal to the object.",
+      "type": "QualitativeValue"
+    },
+    "greater": {
+      "name": "greater",
+      "description": "This ordering relation for qualitative values indicates that the subject is greater than the object.",
+      "type": "QualitativeValue"
+    },
+    "greaterOrEqual": {
+      "name": "greaterOrEqual",
+      "description": "This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.",
+      "type": "QualitativeValue"
+    },
+    "lesser": {
+      "name": "lesser",
+      "description": "This ordering relation for qualitative values indicates that the subject is lesser than the object.",
+      "type": "QualitativeValue"
+    },
+    "lesserOrEqual": {
+      "name": "lesserOrEqual",
+      "description": "This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.",
+      "type": "QualitativeValue"
+    },
+    "nonEqual": {
+      "name": "nonEqual",
+      "description": "This ordering relation for qualitative values indicates that the subject is not equal to the object.",
+      "type": "QualitativeValue"
+    },
+    "valueReference": {
+      "name": "valueReference",
+      "description": "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
+      "type": {
+        "Enumeration": {},
+        "StructuredValue": {}
+      }
+    }
+  }
+}

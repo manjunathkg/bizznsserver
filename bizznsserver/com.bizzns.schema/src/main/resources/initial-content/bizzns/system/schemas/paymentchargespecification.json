@@ -1,0 +1,92 @@
+{
+  "type": "PaymentChargeSpecification",
+  "version": "Schema Draft Version 1.0a",
+  "bases": {
+    "Thing": {
+      "additionalType": {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
+      "description": {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      "image": {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      "name": {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      "url": {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "URL"
+      }
+    },
+    "PriceSpecification": {
+      "eligibleQuantity": {
+        "name": "eligibleQuantity",
+        "description": "The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.",
+        "type": "QuantitativeValue"
+      },
+      "eligibleTransactionVolume": {
+        "name": "eligibleTransactionVolume",
+        "description": "The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.",
+        "type": "PriceSpecification"
+      },
+      "maxPrice": {
+        "name": "maxPrice",
+        "description": "The highest price if the price is a range.",
+        "type": "Number"
+      },
+      "minPrice": {
+        "name": "minPrice",
+        "description": "The lowest price if the price is a range.",
+        "type": "Number"
+      },
+      "price": {
+        "name": "price",
+        "description": "The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.",
+        "type": "NumberorText"
+      },
+      "priceCurrency": {
+        "name": "priceCurrency",
+        "description": "The currency (in 3-letter ISO 4217 format) of the offer price or a price component, when attached to PriceSpecification and its subtypes.",
+        "type": "Text"
+      },
+      "validFrom": {
+        "name": "validFrom",
+        "description": "The beginning of the validity of offer, price specification, or opening hours data.",
+        "type": "DateTime"
+      },
+      "validThrough": {
+        "name": "validThrough",
+        "description": "The end of the validity of offer, price specification, or opening hours data.",
+        "type": "DateTime"
+      },
+      "valueAddedTaxIncluded": {
+        "name": "valueAddedTaxIncluded",
+        "description": "Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.",
+        "type": "Boolean"
+      }
+    }
+  },
+  "properties": {
+    "appliesToDeliveryMethod": {
+      "name": "appliesToDeliveryMethod",
+      "description": "The delivery method(s) to which the delivery charge or payment charge specification applies.",
+      "type": "DeliveryMethod"
+    },
+    "appliesToPaymentMethod": {
+      "name": "appliesToPaymentMethod",
+      "description": "The payment method(s) to which the payment charge specification applies.",
+      "type": "PaymentMethod"
+    }
+  }
+}
