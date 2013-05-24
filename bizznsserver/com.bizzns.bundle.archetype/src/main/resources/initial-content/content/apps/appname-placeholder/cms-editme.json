@@ -1,6 +1,0 @@
-{ 
-	"name": "bizzns.cms", 
-	"sling:resourceType": "bizzns/cms/main",
-	"jcr:primaryNodeType":"nt:unstructured",
-	"jcr:primaryType":"sling:Folder"
-}

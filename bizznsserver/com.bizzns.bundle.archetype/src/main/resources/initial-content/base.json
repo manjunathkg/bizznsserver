@@ -1,5 +1,0 @@
-{ 
-	"name": "bizzns.base", 
-	"sling:resourceType": "bizzns",
-	"jcr:primaryNodeType":"sling:Folder"
-}

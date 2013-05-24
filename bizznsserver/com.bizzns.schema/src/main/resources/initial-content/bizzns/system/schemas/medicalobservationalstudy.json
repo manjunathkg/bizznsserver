@@ -1,0 +1,109 @@
+{
+  "type": "MedicalObservationalStudy",
+  "version": "Schema Draft Version 1.0a",
+  "bases": {
+    "Thing": {
+      "additionalType": {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
+      "description": {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      "image": {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      "name": {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      "url": {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "URL"
+      }
+    },
+    "MedicalEntity": {
+      "alternateName": {
+        "name": "alternateName",
+        "description": "Any alternate name for this medical entity.",
+        "type": "Text"
+      },
+      "code": {
+        "name": "code",
+        "description": "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
+        "type": "MedicalCode"
+      },
+      "guideline": {
+        "name": "guideline",
+        "description": "A medical guideline related to this entity.",
+        "type": "MedicalGuideline"
+      },
+      "medicineSystem": {
+        "name": "medicineSystem",
+        "description": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+        "type": "MedicineSystem"
+      },
+      "recognizingAuthority": {
+        "name": "recognizingAuthority",
+        "description": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
+        "type": "Organization"
+      },
+      "relevantSpecialty": {
+        "name": "relevantSpecialty",
+        "description": "If applicable, a medical specialty in which this entity is relevant.",
+        "type": "MedicalSpecialty"
+      },
+      "study": {
+        "name": "study",
+        "description": "A medical study or trial related to this entity.",
+        "type": "MedicalStudy"
+      }
+    },
+    "MedicalStudy": {
+      "outcome": {
+        "name": "outcome",
+        "description": "Expected or actual outcomes of the study.",
+        "type": "Text"
+      },
+      "population": {
+        "name": "population",
+        "description": "Any characteristics of the population used in the study, e.g. 'males under 65'.",
+        "type": "Text"
+      },
+      "sponsor": {
+        "name": "sponsor",
+        "description": "Sponsor of the study.",
+        "type": "Organization"
+      },
+      "status": {
+        "name": "status",
+        "description": "The status of the study (enumerated).",
+        "type": "MedicalStudyStatus"
+      },
+      "studyLocation": {
+        "name": "studyLocation",
+        "description": "The location in which the study is taking/took place.",
+        "type": "AdministrativeArea"
+      },
+      "studySubject": {
+        "name": "studySubject",
+        "description": "A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.",
+        "type": "MedicalEntity"
+      }
+    }
+  },
+  "properties": {
+    "studyDesign": {
+      "name": "studyDesign",
+      "description": "Specifics about the observational study design (enumerated).",
+      "type": "MedicalObservationalStudyDesign"
+    }
+  }
+}
