@@ -1,0 +1,125 @@
+{
+  "type": "JobPosting",
+  "version": "Schema Draft Version 1.0a",
+  "bases": {
+    "Thing": {
+      "additionalType": {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
+      "description": {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      "image": {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      "name": {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      "url": {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "URL"
+      }
+    }
+  },
+  "properties": {
+    "baseSalary": {
+      "name": "baseSalary",
+      "description": "The base salary of the job.",
+      "type": "Number"
+    },
+    "benefits": {
+      "name": "benefits",
+      "description": "Description of benefits associated with the job.",
+      "type": "Text"
+    },
+    "datePosted": {
+      "name": "datePosted",
+      "description": "Publication date for the job posting.",
+      "type": "Date"
+    },
+    "educationRequirements": {
+      "name": "educationRequirements",
+      "description": "Educational background needed for the position.",
+      "type": "Text"
+    },
+    "employmentType": {
+      "name": "employmentType",
+      "description": "Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).",
+      "type": "Text"
+    },
+    "experienceRequirements": {
+      "name": "experienceRequirements",
+      "description": "Description of skills and experience needed for the position.",
+      "type": "Text"
+    },
+    "hiringOrganization": {
+      "name": "hiringOrganization",
+      "description": "Organization offering the job position.",
+      "type": "Organization"
+    },
+    "incentives": {
+      "name": "incentives",
+      "description": "Description of bonus and commission compensation aspects of the job.",
+      "type": "Text"
+    },
+    "industry": {
+      "name": "industry",
+      "description": "The industry associated with the job position.",
+      "type": "Text"
+    },
+    "jobLocation": {
+      "name": "jobLocation",
+      "description": "A (typically single) geographic location associated with the job position.",
+      "type": "Place"
+    },
+    "occupationalCategory": {
+      "name": "occupationalCategory",
+      "description": "Category or categories describing the job. Use BLS O*NET-SOC taxonomy: http://www.onetcenter.org/taxonomy.html. Ideally includes textual label and formal code, with the property repeated for each applicable value.",
+      "type": "Text"
+    },
+    "qualifications": {
+      "name": "qualifications",
+      "description": "Specific qualifications required for this role.",
+      "type": "Text"
+    },
+    "responsibilities": {
+      "name": "responsibilities",
+      "description": "Responsibilities associated with this role.",
+      "type": "Text"
+    },
+    "salaryCurrency": {
+      "name": "salaryCurrency",
+      "description": "The currency (coded using ISO 4217, http://en.wikipedia.org/wiki/ISO_4217 used for the main salary information in this job posting.",
+      "type": "Text"
+    },
+    "skills": {
+      "name": "skills",
+      "description": "Skills required to fulfill this role.",
+      "type": "Text"
+    },
+    "specialCommitments": {
+      "name": "specialCommitments",
+      "description": "Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.",
+      "type": "Text"
+    },
+    "title": {
+      "name": "title",
+      "description": "The title of the job.",
+      "type": "Text"
+    },
+    "workHours": {
+      "name": "workHours",
+      "description": "The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).",
+      "type": "Text"
+    }
+  }
+}
