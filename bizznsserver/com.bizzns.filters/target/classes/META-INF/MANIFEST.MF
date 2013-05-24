@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1367811916390
+Build-Jdk: 1.6.0_21
+Built-By: S897248
+Bundle-Category: bizzns-filters
+Bundle-Description: Bizzns System Filters - Global filters - wro4j
+Bundle-DocURL: http://bizzns.com
+Bundle-License: http://bizzns.com/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: bizzns :: filters:: wro4j filter
+Bundle-SymbolicName: com.bizzns.filters
+Bundle-Vendor: bizzns.com
+Bundle-Version: 1.0.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.bizzns.filters.wro;uses:="javax.servlet,org.slf4j";v
+ ersion="1.0.0"
+Felix-Initial-Configuration: configuration
+Import-Package: javax.servlet;resolution:=optional,org.slf4j;resolution:
+ =optional;version="[1.6,2)"
+Service-Component: OSGI-INF/com.bizzns.filters.wro.WroFilter.xml
+Sling-Bundle-Resources: /content;path:=/initial-content/content
+Sling-Initial-Content: initial-content;overwrite:=false;uninstall:=false
+Tool: Bnd-1.50.0

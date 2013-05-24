@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.bizzns</groupId>
+    <artifactId>com.bizzns.parent</artifactId>
+      <version>2-SNAPSHOT</version>
+	  <relativePath>../com.bizzns.parent</relativePath>
+  </parent>
+
+   <!--  Source repository for this bundle -->
+   <scm>
+      <connection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.jcrom.git</connection>
+      <developerConnection>scm:git:git://github.com/manjunathkg/bizznsserver/com.bizzns.jcrom.git</developerConnection>
+      <url>https://github.com/manjunathkg/bizznsserver/com.bizzns.jcrom</url>
+   </scm> 
+  
+	<groupId>com.bizzns.jcrom</groupId>
+	<artifactId>com.bizzns.jcrom</artifactId>
+	<packaging>bundle</packaging>
+	<version>1.0.0</version>
+	<name>bizzns :: JCROM node to bean mapping</name>
+	<description>bizzns Jcrom node to bean mapping bundle
+	</description>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>maven-sling-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<!-- Which java packages are exported for other bundles -->
+						<Import-Package>
+							*;resolution:=optional
+						</Import-Package>
+						<Export-Package>
+						</Export-Package>
+                        <Embed-Dependency>
+                       		jcrom
+                        </Embed-Dependency>                        
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<profiles>
+		<profile>
+			<id>development</id> <!--  parent pomdefines variables expected.. we define the values for this particular profile -->
+			<properties>
+				<!-- Iniial bundle configurations (for example FsResource) -->
+				<Felix-Initial-Configuration>
+					configuration
+				</Felix-Initial-Configuration>
+				
+				<Bundle-Category>						     
+                              bizzns-base
+                </Bundle-Category>
+				
+				<!-- initial content to be loaded on bundle installation -->
+				<Sling-Initial-Content>
+					initial-content;overwrite:=false;uninstall:=false
+				</Sling-Initial-Content>
+				
+				<!-- Copy the files from filesystem to Bundle -->
+				<Include-Resource>
+					{maven-resources} 
+				</Include-Resource>
+
+				<!-- node types to be created -->
+				<Sling-Nodetypes> 
+				</Sling-Nodetypes>
+			   
+			   <!-- Delegate Bundle content as resource -->
+				<Sling-Bundle-Resources>
+					 /content;path:=/initial-content/content 				 
+				</Sling-Bundle-Resources>
+
+				<Export-Package>
+					org.jcrom.*
+				</Export-Package>
+				
+				<Private-Package> 
+				</Private-Package>
+				
+
+				<Import-Package> 
+					*;resolution:=optional
+				</Import-Package>
+				<Embed-Dependency>
+				    jcrom
+				</Embed-Dependency>
+			</properties>
+		</profile> 
+	</profiles>
+	
+	
+
+	<dependencies>
+        <dependency>
+			<groupId>org.jcrom</groupId>
+ 			<artifactId>jcrom</artifactId>
+    		<version>1.3.2</version>
+    	</dependency>
+        <dependency>
+                <groupId>javax.jcr</groupId>
+                <artifactId>jcr</artifactId>
+		</dependency>
+   		<dependency> 
+			<groupId>org.apache.jackrabbit</groupId> 
+			<artifactId>jackrabbit-core</artifactId> 
+		</dependency>		
+	</dependencies>
+</project>
