@@ -1,9 +1,0 @@
-{
-	"bizzns:name":"Thing",
-	"sling:resourceType" : "/apps/bizzns/schemas",
- 	"jcr:primaryNodeType":"nt:unstructured",
-    "bizzns:comment": "The most generic type of item.", 
-    "bizzns:comment_plain": "The most generic type of item.", 
-    "bizzns:id": "Thing",
-    "bizzns:label": "Thing"
-}

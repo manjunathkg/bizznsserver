@@ -1,6 +1,0 @@
-{ 
-	"name": "bizzns.cms", 
-	"sling:resourceType": "/apps/bizzns/cms/admin",
-	"jcr:primaryNodeType":"nt:unstructured",
-	"jcr:primaryType":"bizzns:base"
-}

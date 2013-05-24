@@ -1,6 +1,0 @@
-{ 
-	"name": "bizzns.base", 
-	"sling:resourceType": "bizzns",
-	"jcr:primaryNodeType":"nt:unstructured",
-	"jcr:primaryType":"bizzns:app"
-}
