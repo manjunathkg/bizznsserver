@@ -1,0 +1,60 @@
+{
+  "type": "OpeningHoursSpecification",
+  "version": "Schema Draft Version 1.0a",
+  "bases": {
+    "Thing": {
+      "additionalType": {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
+      "description": {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      "image": {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      "name": {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      "url": {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "URL"
+      }
+    }
+  },
+  "properties": {
+    "closes": {
+      "name": "closes",
+      "description": "The closing hour of the place or service on the given day(s) of the week.",
+      "type": "Time"
+    },
+    "dayOfWeek": {
+      "name": "dayOfWeek",
+      "description": "The day of the week for which these opening hours are valid.",
+      "type": "DayOfWeek"
+    },
+    "opens": {
+      "name": "opens",
+      "description": "The opening hour of the place or service on the given day(s) of the week.",
+      "type": "Time"
+    },
+    "validFrom": {
+      "name": "validFrom",
+      "description": "The beginning of the validity of offer, price specification, or opening hours data.",
+      "type": "DateTime"
+    },
+    "validThrough": {
+      "name": "validThrough",
+      "description": "The end of the validity of offer, price specification, or opening hours data.",
+      "type": "DateTime"
+    }
+  }
+}

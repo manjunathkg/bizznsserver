@@ -1,0 +1,97 @@
+{
+  "type": "MedicalTest",
+  "version": "Schema Draft Version 1.0a",
+  "bases": {
+    "Thing": {
+      "additionalType": {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
+      "description": {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      "image": {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      "name": {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      "url": {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "URL"
+      }
+    },
+    "MedicalEntity": {
+      "alternateName": {
+        "name": "alternateName",
+        "description": "Any alternate name for this medical entity.",
+        "type": "Text"
+      },
+      "code": {
+        "name": "code",
+        "description": "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
+        "type": "MedicalCode"
+      },
+      "guideline": {
+        "name": "guideline",
+        "description": "A medical guideline related to this entity.",
+        "type": "MedicalGuideline"
+      },
+      "medicineSystem": {
+        "name": "medicineSystem",
+        "description": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+        "type": "MedicineSystem"
+      },
+      "recognizingAuthority": {
+        "name": "recognizingAuthority",
+        "description": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
+        "type": "Organization"
+      },
+      "relevantSpecialty": {
+        "name": "relevantSpecialty",
+        "description": "If applicable, a medical specialty in which this entity is relevant.",
+        "type": "MedicalSpecialty"
+      },
+      "study": {
+        "name": "study",
+        "description": "A medical study or trial related to this entity.",
+        "type": "MedicalStudy"
+      }
+    }
+  },
+  "properties": {
+    "affectedBy": {
+      "name": "affectedBy",
+      "description": "Drugs that affect the test's results.",
+      "type": "Drug"
+    },
+    "normalRange": {
+      "name": "normalRange",
+      "description": "Range of acceptable values for a typical patient, when applicable.",
+      "type": "Text"
+    },
+    "signDetected": {
+      "name": "signDetected",
+      "description": "A sign detected by the test.",
+      "type": "MedicalSign"
+    },
+    "usedToDiagnose": {
+      "name": "usedToDiagnose",
+      "description": "A condition the test is used to diagnose.",
+      "type": "MedicalCondition"
+    },
+    "usesDevice": {
+      "name": "usesDevice",
+      "description": "Device used to perform the test.",
+      "type": "MedicalDevice"
+    }
+  }
+}

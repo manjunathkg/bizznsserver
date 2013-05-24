@@ -1,0 +1,288 @@
+{
+  "type": "NightClub",
+  "version": "Schema Draft Version 1.0a",
+  "bases": {
+    "Thing": {
+      "additionalType": {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
+      "description": {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      "image": {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      "name": {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      "url": {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "URL"
+      }
+    },
+    "Place": {
+      "address": {
+        "name": "address",
+        "description": "Physical address of the item.",
+        "type": "PostalAddress"
+      },
+      "aggregateRating": {
+        "name": "aggregateRating",
+        "description": "The overall rating, based on a collection of reviews or ratings, of the item.",
+        "type": "AggregateRating"
+      },
+      "containedIn": {
+        "name": "containedIn",
+        "description": "The basic containment relation between places.",
+        "type": "Place"
+      },
+      "event": {
+        "name": "event",
+        "description": "Upcoming or past event associated with this place or organization.",
+        "type": "Event"
+      },
+      "events": {
+        "name": "events",
+        "description": "Upcoming or past events associated with this place or organization (legacy spelling; see singular form, event).",
+        "type": "Event"
+      },
+      "faxNumber": {
+        "name": "faxNumber",
+        "description": "The fax number.",
+        "type": "Text"
+      },
+      "geo": {
+        "name": "geo",
+        "description": "The geo coordinates of the place.",
+        "type": {
+          "GeoCoordinates": {},
+          "GeoShape": {}
+        }
+      },
+      "globalLocationNumber": {
+        "name": "globalLocationNumber",
+        "description": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+        "type": "Text"
+      },
+      "interactionCount": {
+        "name": "interactionCount",
+        "description": "A count of a specific user interactions with this item—for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.",
+        "type": "Text"
+      },
+      "isicV4": {
+        "name": "isicV4",
+        "description": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+        "type": "Text"
+      },
+      "logo": {
+        "name": "logo",
+        "description": "URL of an image for the logo of the item.",
+        "type": "ImageObject"
+      },
+      "map": {
+        "name": "map",
+        "description": "A URL to a map of the place.",
+        "type": "URL"
+      },
+      "maps": {
+        "name": "maps",
+        "description": "A URL to a map of the place (legacy spelling; see singular form, map).",
+        "type": "URL"
+      },
+      "openingHoursSpecification": {
+        "name": "openingHoursSpecification",
+        "description": "The opening hours of a certain place.",
+        "type": "OpeningHoursSpecification"
+      },
+      "photo": {
+        "name": "photo",
+        "description": "A photograph of this place.",
+        "type": {
+          "ImageObject": {},
+          "Photograph": {}
+        }
+      },
+      "photos": {
+        "name": "photos",
+        "description": "Photographs of this place (legacy spelling; see singular form, photo).",
+        "type": {
+          "ImageObject": {},
+          "Photograph": {}
+        }
+      },
+      "review": {
+        "name": "review",
+        "description": "A review of the item.",
+        "type": "Review"
+      },
+      "reviews": {
+        "name": "reviews",
+        "description": "Review of the item (legacy spelling; see singular form, review).",
+        "type": "Review"
+      },
+      "telephone": {
+        "name": "telephone",
+        "description": "The telephone number.",
+        "type": "Text"
+      }
+    },
+    "Organization": {
+      "brand": {
+        "name": "brand",
+        "description": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+        "type": {
+          "Brand": {},
+          "Organization": {}
+        }
+      },
+      "contactPoint": {
+        "name": "contactPoint",
+        "description": "A contact point for a person or organization.",
+        "type": "ContactPoint"
+      },
+      "contactPoints": {
+        "name": "contactPoints",
+        "description": "A contact point for a person or organization (legacy spelling; see singular form, contactPoint).",
+        "type": "ContactPoint"
+      },
+      "duns": {
+        "name": "duns",
+        "description": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+        "type": "Text"
+      },
+      "email": {
+        "name": "email",
+        "description": "Email address.",
+        "type": "Text"
+      },
+      "employee": {
+        "name": "employee",
+        "description": "Someone working for this organization.",
+        "type": "Person"
+      },
+      "employees": {
+        "name": "employees",
+        "description": "People working for this organization. (legacy spelling; see singular form, employee)",
+        "type": "Person"
+      },
+      "founder": {
+        "name": "founder",
+        "description": "A person who founded this organization.",
+        "type": "Person"
+      },
+      "founders": {
+        "name": "founders",
+        "description": "A person who founded this organization (legacy spelling; see singular form, founder).",
+        "type": "Person"
+      },
+      "foundingDate": {
+        "name": "foundingDate",
+        "description": "The date that this organization was founded.",
+        "type": "Date"
+      },
+      "hasPOS": {
+        "name": "hasPOS",
+        "description": "Points-of-Sales operated by the organization or person.",
+        "type": "Place"
+      },
+      "legalName": {
+        "name": "legalName",
+        "description": "The official name of the organization, e.g. the registered company name.",
+        "type": "Text"
+      },
+      "location": {
+        "name": "location",
+        "description": "The location of the event or organization.",
+        "type": {
+          "Place": {},
+          "PostalAddress": {}
+        }
+      },
+      "makesOffer": {
+        "name": "makesOffer",
+        "description": "A pointer to products or services offered by the organization or person.",
+        "type": "Offer"
+      },
+      "member": {
+        "name": "member",
+        "description": "A member of this organization.",
+        "type": {
+          "Organization": {},
+          "Person": {}
+        }
+      },
+      "members": {
+        "name": "members",
+        "description": "A member of this organization (legacy spelling; see singular form, member).",
+        "type": {
+          "Organization": {},
+          "Person": {}
+        }
+      },
+      "naics": {
+        "name": "naics",
+        "description": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+        "type": "Text"
+      },
+      "owns": {
+        "name": "owns",
+        "description": "Products owned by the organization or person.",
+        "type": {
+          "OwnershipInfo": {},
+          "Product": {}
+        }
+      },
+      "seeks": {
+        "name": "seeks",
+        "description": "A pointer to products or services sought by the organization or person (demand).",
+        "type": "Demand"
+      },
+      "taxID": {
+        "name": "taxID",
+        "description": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+        "type": "Text"
+      },
+      "vatID": {
+        "name": "vatID",
+        "description": "The Value-added Tax ID of the organisation or person.",
+        "type": "Text"
+      }
+    },
+    "LocalBusiness": {
+      "branchOf": {
+        "name": "branchOf",
+        "description": "The larger organization that this local business is a branch of, if any.",
+        "type": "Organization"
+      },
+      "currenciesAccepted": {
+        "name": "currenciesAccepted",
+        "description": "The currency accepted (in ISO 4217 currency format).",
+        "type": "Text"
+      },
+      "openingHours": {
+        "name": "openingHours",
+        "description": "The opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.- Days are specified using the following two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su.- Times are specified using 24:00 time. For example, 3pm is specified as 15:00. - Here is an example: Tuesdays and Thursdays 4-8pm. - If a business is open 7 days a week, then it can be specified as Monday through Sunday, all day.",
+        "type": "Duration"
+      },
+      "paymentAccepted": {
+        "name": "paymentAccepted",
+        "description": "Cash, credit card, etc.",
+        "type": "Text"
+      },
+      "priceRange": {
+        "name": "priceRange",
+        "description": "The price range of the business, for example $$$.",
+        "type": "Text"
+      }
+    }
+  }
+}

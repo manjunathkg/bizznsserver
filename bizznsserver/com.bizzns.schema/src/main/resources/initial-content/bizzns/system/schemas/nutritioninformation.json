@@ -1,0 +1,95 @@
+{
+  "type": "NutritionInformation",
+  "version": "Schema Draft Version 1.0a",
+  "bases": {
+    "Thing": {
+      "additionalType": {
+        "name": "additionalType",
+        "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+        "type": "URL"
+      },
+      "description": {
+        "name": "description",
+        "description": "A short description of the item.",
+        "type": "Text"
+      },
+      "image": {
+        "name": "image",
+        "description": "URL of an image of the item.",
+        "type": "URL"
+      },
+      "name": {
+        "name": "name",
+        "description": "The name of the item.",
+        "type": "Text"
+      },
+      "url": {
+        "name": "url",
+        "description": "URL of the item.",
+        "type": "URL"
+      }
+    }
+  },
+  "properties": {
+    "calories": {
+      "name": "calories",
+      "description": "The number of calories",
+      "type": "Energy"
+    },
+    "carbohydrateContent": {
+      "name": "carbohydrateContent",
+      "description": "The number of grams of carbohydrates.",
+      "type": "Mass"
+    },
+    "cholesterolContent": {
+      "name": "cholesterolContent",
+      "description": "The number of milligrams of cholesterol.",
+      "type": "Mass"
+    },
+    "fatContent": {
+      "name": "fatContent",
+      "description": "The number of grams of fat.",
+      "type": "Mass"
+    },
+    "fiberContent": {
+      "name": "fiberContent",
+      "description": "The number of grams of fiber.",
+      "type": "Mass"
+    },
+    "proteinContent": {
+      "name": "proteinContent",
+      "description": "The number of grams of protein.",
+      "type": "Mass"
+    },
+    "saturatedFatContent": {
+      "name": "saturatedFatContent",
+      "description": "The number of grams of saturated fat.",
+      "type": "Mass"
+    },
+    "servingSize": {
+      "name": "servingSize",
+      "description": "The serving size, in terms of the number of volume or mass",
+      "type": "Text"
+    },
+    "sodiumContent": {
+      "name": "sodiumContent",
+      "description": "The number of milligrams of sodium.",
+      "type": "Mass"
+    },
+    "sugarContent": {
+      "name": "sugarContent",
+      "description": "The number of grams of sugar.",
+      "type": "Mass"
+    },
+    "transFatContent": {
+      "name": "transFatContent",
+      "description": "The number of grams of trans fat.",
+      "type": "Mass"
+    },
+    "unsaturatedFatContent": {
+      "name": "unsaturatedFatContent",
+      "description": "The number of grams of unsaturated fat.",
+      "type": "Mass"
+    }
+  }
+}
